@@ -1,0 +1,7 @@
+node_modules
+
+# Development Ouput Folder
+build
+
+# Production Ouput Folder
+dist

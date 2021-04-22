@@ -1,0 +1,28 @@
+.shopping-cart {
+    position: relative;
+    .shopping-cart__counter {
+        position: absolute;
+        height: 30px;
+        line-height: 30px;
+        width: 70px;
+        background-color: var(--light-green);
+        top: 8px;
+        left: -35px;
+        padding-left: 15px;
+        border-radius: 25px;
+        color: white;
+    }
+    .shopping-cart__icon-container {
+        position: relative;
+        z-index: 1;
+        height: 46px;
+        line-height: 46px;
+        width: 46px;
+        border-radius: 100%;
+        background-color: var(--light-pink);
+        text-align: center;
+        .shopping-cart__icon {
+            width: 22px;
+        }
+    }
+}
