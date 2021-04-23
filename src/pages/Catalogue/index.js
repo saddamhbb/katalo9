@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const Catalogue = () => {
+    const totalItems = 12;
+
     return (
         <div className="container py-2">
             <div className="d-flex mx-n-1 flex-wrap mb-2">
@@ -33,6 +35,130 @@ const Catalogue = () => {
                     <div>
                         <img src="/img/products/flower-tree/flower-tree-cat.jpeg" />
                         <h2><a href="#">Flower Tree</a></h2>
+                    </div>
+                </div>
+            </div>
+
+            <div className="d-flex mx-n-1 flex-wrap mb-2">
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center mb-1">
+                                <span>Rp 15.0000</span>
+                            </div>
+                            <button className="w-100 btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center">
+                                <span>Rp 15.0000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center">
+                                <span>Rp 15.0000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center">
+                                <span>Rp 15.0000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center">
+                                <span>Rp 15.0000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center">
+                                <span>Rp 15.0000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center">
+                                <span>Rp 15.0000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-d-3 px-1 mb-2">
+                    <div className="card">
+                        <div>
+                            <img src="/img/products/potted-plant/potted-flower-1.jpeg" />
+                        </div>
+                        <div className="p-1">
+                            <div className="text-center">
+                                <h3>Flower of Friendship</h3>
+                            </div>
+                            <div className="text-center">
+                                <span>Rp 15.0000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

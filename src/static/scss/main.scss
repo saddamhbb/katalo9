@@ -1,3 +1,28 @@
 @import "variables", "normalize";
 @import "layout/container", "layout/grid";
 @import "utilities/display", "utilities/flex", "utilities/gutter", "utilities/coloring", "utilities/text";
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px 0 rgba(49, 53, 59, 0.12);
+    max-width: 270px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.btn {
+    height: 48px;
+    line-height: 48px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background-color: var(--light-pink);
+    color: var(--white);
+}
