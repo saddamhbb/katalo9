@@ -1,5 +1,8 @@
 # Custom Stack to Build Universal React App
 
+## Live Website
+https://katalo9.herokuapp.com/
+
 ## Requirements
 Use the latest Node and NPM version.
 
@@ -34,6 +37,7 @@ Due to this is a production mode, no watcher is running for file changes. So if 
 - Support SCSS 
 - Support Compression to gzip or brotli for production build
 - API using JSON Server. Please navigate to this URL: https://katalo9-api.herokuapp.com
+- Custom CSS Framework
 
 ## Layout Breakpoints
 1. \>= 992px Desktop
