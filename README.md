@@ -3,6 +3,11 @@
 ## Live Website
 https://katalo9.herokuapp.com/
 
+### Available Routes
+    1. Catalogue Hompage _> https://katalo9.herokuapp.com/
+    2. Product Detail -> https://katalo9.herokuapp.com/detail-product-1
+    3. Not Found -> https://katalo9.herokuapp.com/asdfsdf
+
 ## Requirements
 Use the latest Node and NPM version.
 

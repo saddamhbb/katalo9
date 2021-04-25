@@ -7,11 +7,26 @@ import "./style.scss";
 
 const Catalogue = () => {
     const [products, setProducts] = useState([]);
+    const [popularProducts, setPopularProducts] = useState([]);
 
     useEffect(() => {
-        API.getProduct().then(res => {
-            setProducts(res.data)
-        })
+        API.getProduct({ _limit: 4 })
+            .then(res => {
+                setPopularProducts(res.data)
+            })
+            .catch(e => {
+                console.error(e)
+                // Define a function to handle exception
+            })
+
+        API.getProduct()
+            .then(res => {
+                setProducts(res.data)
+            })
+            .catch(e => {
+                console.error(e)
+                // Define a function to handle exception
+            })
     }, [])
 
     return (
@@ -61,11 +76,11 @@ const Catalogue = () => {
                     </div>
                 </section>
                 <section className="section-separator-2">
-                    <h2 className="fm-title fs-3 text-center">All <span className="text-primary">Products</span></h2>
+                    <h2 className="fm-title fs-3 text-center">Popular <span className="text-primary">Products</span></h2>
                     <div className="d-flex mx-n-1 flex-wrap">
                         {
-                            !!products.length ?
-                                products.map(product => {
+                            !!popularProducts.length ?
+                                popularProducts.map(product => {
                                     return (
                                         <div key={product.id} className="col-12 col-d-3 px-1 mb-2">
                                             <Card title={product.title} price={product.price} images={product.images} />

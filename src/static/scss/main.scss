@@ -6,7 +6,11 @@
 .card {
     border-radius: 8px;
     overflow: hidden;
-    max-width: 270px;
+    max-width: 100%;
+
+    @media only screen and (min-width: 600px) {
+        max-width: 270px;
+    }
 }
 
 // Sizing

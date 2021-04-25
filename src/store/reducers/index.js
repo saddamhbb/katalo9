@@ -9,4 +9,13 @@ const offcanvasState = (state = false, action) => {
     }
 };
 
-export default combineReducers({ offcanvasState });
+const popularProducts = (state = [], action) => {
+    switch (action.type) {
+        case "SET_POPULAR_PRODUCTS":
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+export default combineReducers({ offcanvasState, popularProducts });

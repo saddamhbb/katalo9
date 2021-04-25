@@ -6,7 +6,7 @@ body {
   margin: 0;
   color: var(--black);
   font-size: var(--text-m);
-  line-height: 1;
+  line-height: 1.5;
   font-family: "Roboto", sans-serif;
 }
 
@@ -35,4 +35,5 @@ h6 {
 
 main {
   min-height: 100vh;
+  overflow-x: hidden;
 }
