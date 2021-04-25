@@ -13,7 +13,7 @@
     "build-prod": "npm-run-all --parallel build-prod:server build-prod:client",
     "build-prod:server": "webpack --config config/webpack.server.cjs",
     "build-prod:client": "webpack --config config/webpack.client.cjs",
-    "start": "nodemon dist/server-bundled.cjs"
+    "start": "npm run build-prod && nodemon dist/server-bundled.cjs"
   },
   "author": "Saddam Habibie",
   "license": "ISC",
