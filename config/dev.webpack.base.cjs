@@ -1,9 +1,6 @@
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const CopyPlugin = require("copy-webpack-plugin");
-// const PurgecssPlugin = require("purgecss-webpack-plugin");
-// const glob = require("glob");
 const LoadablePlugin = require('@loadable/webpack-plugin')
 
 module.exports = {
@@ -21,7 +18,10 @@ module.exports = {
       },
       {
         test: /\.(scss)$/,
-        include: [path.resolve(__dirname, "../src/pages"), path.resolve(__dirname, "../src/components")],
+        include: [
+          path.resolve(__dirname, "../src/pages"),
+          path.resolve(__dirname, "../src/components")
+        ],
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
@@ -50,10 +50,6 @@ module.exports = {
   plugins: [
     new Dotenv({ systemvars: true }),
     new MiniCssExtractPlugin(),
-    // new CopyPlugin([
-    //   { from: "src/static/fonts", to: "static/fonts" },
-    //   { from: "src/static/img", to: "static/img" }
-    // ]),
     new LoadablePlugin()
   ]
 };

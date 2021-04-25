@@ -32,6 +32,7 @@ const renderer = (req, store, context, extractor) => {
                 <link rel="preconnect" href="https://fonts.gstatic.com">
                 <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Roboto&display=swap" >
+                <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
                 <link rel="stylesheet" href="/css/main.css" />
                 ${extractor.getLinkTags()}
                 ${extractor.getStyleTags()}

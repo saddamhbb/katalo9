@@ -5,3 +5,49 @@
 .text-white {
     color: var(--white);
 }
+
+.text-primary {
+    color: var(--light-green);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fs-1 {
+    font-size: 1rem;
+}
+
+.fs-2 {
+    font-size: 2rem;
+}
+
+.fs-3 {
+    font-size: 3rem;
+}
+
+.text-hover-primary {
+    transition: color 0.2s ease-in;
+}
+
+.text-hover-primary:hover {
+    color: var(--light-green);
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fm-primary {
+    font-family: "Roboto", sans-serif;
+}
+
+.fm-title {
+    font-family: "Oleo Script", cursive;
+}

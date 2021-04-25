@@ -3,9 +3,6 @@ const Dotenv = require("dotenv-webpack");
 const CompressionPlugin = require("compression-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const PurgecssPlugin = require("purgecss-webpack-plugin");
-const glob = require("glob");
 
 module.exports = {
   mode: "production",
@@ -22,12 +19,15 @@ module.exports = {
       },
       {
         test: /\.(scss)$/,
-        include: [path.resolve(__dirname, "src/client")],
+        include: [
+          path.resolve(__dirname, "../src/pages"),
+          path.resolve(__dirname, "../src/components")
+        ],
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       },
       {
         test: /\.(scss)$/,
-        include: [path.resolve(__dirname, "src/static")],
+        include: [path.resolve(__dirname, "../src/static")],
         use: [
           {
             loader: "file-loader",
@@ -44,29 +44,10 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    alias: {
-      Components: path.resolve(__dirname, "src/components"),
-      Pages: path.resolve(__dirname, "src/pages"),
-      Store: path.resolve(__dirname, "src/store"),
-      Helpers: path.resolve(__dirname, "src/helpers"),
-      Utilities: path.resolve(__dirname, "src/utilities")
-    }
-  },
   plugins: [
     new Dotenv({ systemvars: true }),
-    new MiniCssExtractPlugin({
-      filename: "/static/css/components.css",
-      chunkFilename: "[id].css"
-    }),
-    new PurgecssPlugin({
-      paths: glob.sync(`${path.resolve(__dirname, "src")}/**/*`, { nodir: true })
-    }),
+    new MiniCssExtractPlugin(),
     new OptimizeCssAssetsPlugin({ canPrint: false }),
-    new CopyPlugin([
-      { from: "src/static/fonts", to: "static/fonts" },
-      { from: "src/static/img", to: "static/img" }
-    ]),
     new CompressionPlugin({
       test: /\.(css|js)$/,
       filename: "[path].br[query]",
