@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import API from "../../../utilities/api";
+import Card from "../../../components/Card";
 
 
 const SectionAllProducts = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        API.getProducts()
+            .then(res => {
+                setProducts(res.data)
+            })
+            .catch(e => {
+                console.error(e)
+                // Define a function to handle exception
+            })
+    }, [])
 
     if (!!products.length) {
         return (
@@ -19,9 +33,11 @@ const SectionAllProducts = () => {
                     }
                 </div>
             </section>
-        )
+        );
     } else {
-        return null
+        return null;
     }
 
-}
+};
+
+export default SectionAllProducts;

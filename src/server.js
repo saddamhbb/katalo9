@@ -1,4 +1,4 @@
-import "dotenv/config.js"
+import "dotenv/config.js";
 
 import "core-js/stable/index.js";
 import "regenerator-runtime/runtime.js";

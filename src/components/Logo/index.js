@@ -1,13 +1,14 @@
 import React from "react";
-import "./style.scss"
+import { Link } from "react-router-dom";
+import "./style.scss";
 
 const Logo = () => {
     return (
-        <div className="logo">
+        <Link className="logo" to="/">
             <img className="logo-icon" src="/img/flower.svg" title="Flower Shop Logo" alt="Flower Shop Logo" />
             Flowers
-        </div>
+        </Link>
     )
-}
+};
 
 export default Logo;

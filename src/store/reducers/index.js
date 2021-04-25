@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 
+// Todo: split reducers files
+
 const offcanvasState = (state = false, action) => {
     switch (action.type) {
         case "TOGGLE_OFFCANVAS":
@@ -16,6 +18,6 @@ const popularProducts = (state = [], action) => {
         default:
             return state;
     }
-}
+};
 
 export default combineReducers({ offcanvasState, popularProducts });

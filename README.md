@@ -4,7 +4,7 @@
 https://katalo9.herokuapp.com/
 
 ### Available Routes
-    1. Catalogue Hompage _> https://katalo9.herokuapp.com/
+    1. Catalogue Hompage -> https://katalo9.herokuapp.com/
     2. Product Detail -> https://katalo9.herokuapp.com/detail-product-1
     3. Not Found -> https://katalo9.herokuapp.com/asdfsdf
 
@@ -15,15 +15,15 @@ Use the latest Node and NPM version.
 2. NPM 6.14.4
 
 ## How to run
-Before following the guide, please install the dependencies first by running `npm i`.
+Before following this guide, please install all the dependencies first by running `npm i`.
 
 ### Development Mode
 1. NPM run dev
 2. Wait for webpack finish compiling
 3. Navigate to `localhost`, by default server running on port 80
-4. Dont exit the terminal, because its watching file changes and recompile it
+4. Don't exit the terminal, because it watching file changes and recompile it
 
-Due to this stack not yet implemet Hot Reload, so if you finish editing any files, please do refresh the browser.
+Due to this stack does not yet implement `Hot Reload`, so if you finish editing any files, please do refresh the browser.
 
 ### Production Mode
 1. NPM run build-prod
@@ -43,6 +43,7 @@ Due to this is a production mode, no watcher is running for file changes. So if 
 - Support Compression to gzip or brotli for production build
 - API using JSON Server. Please navigate to this URL: https://katalo9-api.herokuapp.com
 - Custom CSS Framework
+- On Demand changes SSR or CSR or use Both
 
 ## Layout Breakpoints
 1. \>= 992px Desktop
@@ -51,12 +52,16 @@ Due to this is a production mode, no watcher is running for file changes. So if 
 ## Universal App
 This project able to render pages on **server** / **client**, please see following examples.
 
+By default all component `without` dynamic data will be server rendered.
+
+To prevent component with static data rendered on the server, we can use this technique.
+
   ``` 
     // in Class Component
     render () {
         <>
         {
-            this.state.didMount && <YourComponent />
+            this.state.didMount && <div> Hello </div>
         }
         <OutSideComponent > // This will rendered on server side
         </>
@@ -66,9 +71,25 @@ This project able to render pages on **server** / **client**, please see followi
     return (
         </>
         {
-            didMount && <YourComponent />
+            didMount && <div> Hello </div>
         }
         <OutSideComponent > // This will rendered on server side
         <>
     )
+
+    // If we extract the hello component above into a separate component, then we can use this technique.
+    const HelloComponent = loadable(() => import('./HelloComponent'), { ssr: false });
   ```
+
+By default all component `with` dynamic data will be client side rendered.
+
+So if we want to make it server rendered, we need to fetch data in server too, then save the data on global store.
+
+```
+
+// In every page there is a function called load data. This function will get data on the server and store it on global store
+const loadData = (store) => {
+    return store.dispatch(getPopularProducts({})); //Load data popular product on the server
+};
+
+```
