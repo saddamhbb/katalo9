@@ -10,7 +10,7 @@ SwiperCore.use([Navigation]);
 const Card = ({ title, price, images }) => {
     return (
         <div className="card">
-            <div>
+            <div className="text-center">
                 {!!images ? <Swiper
                     navigation
                     spaceBetween={15}
