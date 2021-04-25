@@ -3,6 +3,7 @@ const Dotenv = require("dotenv-webpack");
 const CompressionPlugin = require("compression-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const LoadablePlugin = require("@loadable/webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -60,6 +61,7 @@ module.exports = {
     new CompressionPlugin({
       test: /\.(css|js)$/,
       algorithm: "gzip"
-    })
+    }),
+    new LoadablePlugin()
   ]
 };

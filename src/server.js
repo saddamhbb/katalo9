@@ -31,9 +31,10 @@ const compressionConfig = {
 const PORT = process.env.PORT || 80;
 const app = express();
 
-const statsFile = path.resolve("build/loadable-stats.json");
+const statsFile = process.env.NODE_ENV === "production"
+  ? path.resolve("dist/loadable-stats.json")
+  : path.resolve("build/loadable-stats.json");
 
-// 
 const extractor = new ChunkExtractor({ statsFile })
 
 app.use(cookieParser());

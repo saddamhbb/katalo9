@@ -6,7 +6,7 @@ https://katalo9.herokuapp.com/
 Because this website using free heroku hosting, if something unexpected happened please contact me.
 
 ### Available Routes
-    1. Catalogue Hompage -> https://katalo9.herokuapp.com/
+    1. Catalogue Homepage -> https://katalo9.herokuapp.com/
     2. Product Detail -> https://katalo9.herokuapp.com/detail-product-1
     3. Not Found -> https://katalo9.herokuapp.com/asdfsdf
 

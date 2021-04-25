@@ -9,7 +9,7 @@
     "build-dev:watch-server": "nodemon build/server-bundled.cjs --watch",
     "build-dev:server": "webpack --config config/dev.webpack.server.cjs --watch",
     "build-dev:client": "webpack --config config/dev.webpack.client.cjs --watch",
-    "prod": "nodemon dist/server-bundled.cjs",
+    "prod": "node dist/server-bundled.cjs",
     "build-prod": "npm-run-all --parallel build-prod:server build-prod:client",
     "build-prod:server": "webpack --config config/webpack.server.cjs",
     "build-prod:client": "webpack --config config/webpack.client.cjs"

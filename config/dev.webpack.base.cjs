@@ -1,7 +1,7 @@
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const LoadablePlugin = require('@loadable/webpack-plugin')
+const LoadablePlugin = require("@loadable/webpack-plugin");
 
 module.exports = {
   mode: "development",
