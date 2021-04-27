@@ -1,21 +1,36 @@
 import React, { useEffect, useState } from "react";
+import loadable from '@loadable/component';
 import { Helmet } from "react-helmet";
+import { useParams } from "react-router-dom";
 
-import Card from "../../components/Card";
 import API from "../../utilities/api";
 import "./style.scss";
 
+const SectionRelatedProducts = loadable(() => import('./SectionRelatedProducts'), { ssr: false });
+const SectionLightBox = loadable(() => import('./SectionLightBox'), { ssr: false });
+const SectionDetail = loadable(() => import('./SectionDetail'), { ssr: false });
+const Loading = loadable(() => import('../../components/Loading'), { ssr: false });
+
 const ProductDetail = () => {
+    const { id } = useParams();
+    const [data, setData] = useState({});
+
+    useEffect(() => {
+        // This page is fully client side, due to we only get data on client side.
+        API.getProduct(id).then(res => setData(res.data));
+    }, []);
+
     return (
         <>
             <Helmet>
-                <title>Flowers - Product Catalogue</title>
-                <meta name="description" content="We are florist expertise in specialised arrangements. We accept urgent orders for same day delivery or pick-up to cater to your special occasions." />
+                <title>{data.title}</title>
+                <meta name="description" content={data.desc} />
             </Helmet>
-            <div className="section-separator-1"></div>
-            <div className="text-center">
-                <h1>Product Detail Page</h1>
-            </div>
+            <section className="container py-2">
+                <SectionDetail data={data} />
+                <SectionRelatedProducts />
+                <SectionLightBox data={data.images} />
+            </section>
         </>
     )
 };

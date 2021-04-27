@@ -19,20 +19,26 @@ const Card = ({ title, price, images }) => {
                     {
                         images.map(({ priority, url }, i) => {
                             // using i as key due to the index of the array is not editable
-                            return <SwiperSlide key={i}><img src={url} /></SwiperSlide>
+                            return (
+                                <SwiperSlide key={i}>
+                                    <a className="d-block" href="/detail-product-1"><img src={url} /></a>
+                                </SwiperSlide>
+                            );
                         })
                     }
-                </Swiper> : <img src={"https://placeholder.com/270x312"} />
+                </Swiper> : <img src={"https://via.placeholder.com/270x312"} />
                 }
             </div>
             <div className="p-1">
-                <div className="text-center">
-                    <h3 className="text-ellipsis">{title}</h3>
-                </div>
-                <div className="text-center mb-1">
-                    <span>{formatPrice(price)}</span>
-                </div>
-                <button className="w-100 btn btn-primary text-uppercase fw-bold">Add to Cart</button>
+                <a className="d-block" href="/detail-product-1">
+                    <div className="text-center">
+                        <h3 className="text-ellipsis">{title}</h3>
+                    </div>
+                    <div className="text-center mb-1">
+                        <span>{formatPrice(price)}</span>
+                    </div>
+                </a>
+                <button onClick={() => console.log("Clicked")} className="w-100 btn btn-primary text-uppercase fw-bold">Add to Cart</button>
             </div>
         </div>
     )

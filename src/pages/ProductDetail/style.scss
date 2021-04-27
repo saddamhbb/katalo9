@@ -1,0 +1,38 @@
+.pd-btn-action {
+    width: calc(50% - 7.5px);
+}
+
+.pd-btn-lightbox {
+    width: 36px;
+    height: 36px;
+    z-index: 100;
+    border: 2px solid var(--black);
+    cursor: pointer;
+    right: 25px;
+}
+
+.pd-btn-lightbox__img {
+    width: 18px;
+}
+
+.pd-mid-section {
+    margin: 0 auto;
+
+    @media only screen and (min-width: 992px) {
+        max-width: 300px;
+    }
+}
+
+.pd-end-section {
+    padding: 15px;
+    border: 1px solid var(--light-grey);
+
+    @media only screen and (min-width: 992px) {
+        max-width: 300px;
+        margin-left: auto;
+    }
+}
+
+.pd-end-section__jumlah {
+    max-width: 142.5px;
+}

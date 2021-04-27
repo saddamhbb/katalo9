@@ -18,7 +18,6 @@ export default [
         path: "/detail-:product-:id",
         exact: true
       },
-      // Not Found Page
       {
         ...NotFound
       }

@@ -32,6 +32,7 @@
     padding-right: 15px;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -74,6 +75,10 @@
     border-radius: 8px;
 }
 
+.border-radius-50 {
+    border-radius: 50%;
+}
+
 // Custom Plugin Section
 .swiper-button-next,
 .swiper-button-prev {
@@ -81,7 +86,21 @@
     background-color: var(--light-pink);
 }
 
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    pointer-events: auto;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
     font-size: 1.5rem; //24px
+}
+
+// Forms
+.form-field {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--light-grey);
+    padding: 10px;
 }

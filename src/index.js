@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import { renderRoutes } from "react-router-config";
 import axios from "axios";
 import { loadableReady } from "@loadable/component";
+import SimpleReactLightbox from 'simple-react-lightbox'
 
 import Routes from "./routes";
 import reducers from "./store/reducers";
@@ -30,7 +31,9 @@ loadableReady(() => {
   ReactDOM.hydrate(
     <Provider store={store}>
       <BrowserRouter>
-        <>{renderRoutes(Routes)}</>
+        <SimpleReactLightbox>
+          <>{renderRoutes(Routes)}</>
+        </SimpleReactLightbox>
       </BrowserRouter>
     </Provider>,
     document.getElementById("root")

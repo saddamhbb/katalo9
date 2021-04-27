@@ -3,37 +3,46 @@
 // b is bottom
 // t is top
 // n negative
+.p-1 {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 
 .py-1 {
-    padding: 15px 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .px-1 {
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .pb-1 {
     padding-bottom: 15px;
 }
 
-.p-1 {
-    padding: 15px;
-}
-
 .p-2 {
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .py-2 {
-    padding: 30px 0;
-}
-
-.pb-2 {
+    padding-top: 30px;
     padding-bottom: 30px;
 }
 
 .px-2 {
-    padding: 0 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.pb-2 {
+    padding-bottom: 30px;
 }
 
 // Margin Bottom
@@ -57,6 +66,11 @@
     .mb-d-2 {
         margin-bottom: 30px;
     }
+}
+
+// Margin Right
+.me-1 {
+    margin-right: 15px;
 }
 
 // Negative Margin

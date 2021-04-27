@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import API from "../../../utilities/api";
 import Card from "../../../components/Card";
 
-
-const SectionAllProducts = () => {
+const SectionRelatedProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        API.getProducts()
+        API.getProducts({ _limit: 4 })
             .then(res => {
                 setProducts(res.data)
             })
@@ -20,7 +19,7 @@ const SectionAllProducts = () => {
     if (!!products.length) {
         return (
             <section className="section-separator-2">
-                <h2 className="fm-title fs-3 text-center">All <span className="text-primary">Products</span></h2>
+                <h2 className="fm-title fs-3 text-center">Related <span className="text-primary">Products</span></h2>
                 <div className="d-flex mx-n-1 flex-wrap">
                     {
                         products.map(product => {
@@ -39,4 +38,4 @@ const SectionAllProducts = () => {
     }
 };
 
-export default SectionAllProducts;
+export default SectionRelatedProducts;
