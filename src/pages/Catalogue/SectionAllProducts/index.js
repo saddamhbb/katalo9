@@ -26,7 +26,7 @@ const SectionAllProducts = () => {
                         products.map(product => {
                             return (
                                 <div key={product.id} className="product-grid col-6 col-s-4 col-md-3 px-1 mb-2">
-                                    <Card title={product.title} price={product.price} images={product.images} />
+                                    <Card id={product.id} title={product.title} price={product.price} images={product.images} />
                                 </div>
                             )
                         })

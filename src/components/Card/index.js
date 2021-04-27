@@ -7,7 +7,7 @@ import { formatPrice } from '../../utilities/string';
 
 SwiperCore.use([Navigation]);
 
-const Card = ({ title, price, images }) => {
+const Card = ({ id, title, price, images }) => {
     return (
         <div className="card">
             <div className="text-center">
@@ -17,11 +17,11 @@ const Card = ({ title, price, images }) => {
                     slidesPerView={1}
                 >
                     {
-                        images.map(({ priority, url }, i) => {
+                        images.map(({ url }, i) => {
                             // using i as key due to the index of the array is not editable
                             return (
                                 <SwiperSlide key={i}>
-                                    <a className="d-block" href="/detail-product-1"><img src={url} /></a>
+                                    <a className="d-block" href={`/detail-product-${id}`}><img src={url} /></a>
                                 </SwiperSlide>
                             );
                         })
@@ -30,7 +30,7 @@ const Card = ({ title, price, images }) => {
                 }
             </div>
             <div className="p-1">
-                <a className="d-block" href="/detail-product-1">
+                <a className="d-block" href={`/detail-product-${id}`}>
                     <div className="text-center">
                         <h3 className="text-ellipsis">{title}</h3>
                     </div>
@@ -45,6 +45,7 @@ const Card = ({ title, price, images }) => {
 };
 
 Card.propTypes = {
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     images: PropTypes.array
