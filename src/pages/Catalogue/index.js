@@ -11,9 +11,9 @@ const SectionCategory = loadable(() => import('./SectionCategory'));
 const SectionPopularProducts = loadable(() => import('./SectionPopularProducts'));
 const SectionAllProducts = loadable(() => import('./SectionAllProducts'), { ssr: false });
 
-const Catalogue = ({ popularProducts }) => {
+const Catalogue = ({ popularProducts, getPopularProducts }) => {
     useEffect(() => {
-        getPopularProducts() //Load data popular product on the client
+        getPopularProducts()//Load data popular product on the client
     }, [])
 
     return (
@@ -39,9 +39,7 @@ const mapStateToProps = ({ popularProducts }) => {
 };
 
 // Load Data on The Server
-const loadData = (store) => {
-    return store.dispatch(getPopularProducts({})); //Load data popular product on the server
-};
+const loadData = ({ dispatch }) => dispatch(getPopularProducts()); //Load data popular product on the server;
 
 export default {
     loadData,
